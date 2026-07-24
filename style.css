@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* ================= Base ================= */
+body {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+/* ================= Global Color Utilities ================= */
+.text-yellow {
+  color: #eec41e !important;
+}
+
+.btn-yellow {
+  background-color: #eec41e;
+  border: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-yellow:hover {
+  background-color: #d4ad16;
+}
+
+/* ================= Main Content ================= */
+.main-content {
+  min-height: 80vh;
+  padding-top: 100px;
+}
+
+/* ================= 1. Header & Navbar ================= */
+.custom-navbar {
+  padding: 10px 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.custom-navbar .navbar-brand img {
+  height: 58px !important;
+  width: auto;
+}
+
+.custom-navbar .nav-link {
+  position: relative;
+  padding: 15px 20px !important;
+  color: #1b1c25;
+  font-weight: 600;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+/* Hover underline animation */
+.custom-navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #eec41e;
+  transition: width 0.3s ease-in-out;
+}
+
+.custom-navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Active underline */
+.custom-navbar .nav-link.active::after {
+  width: 100% !important;
+  height: 1.5px !important;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+  color: #eec41e !important;
+}
+
+/* Dropdown arrow */
+.custom-navbar .dropdown-toggle::after {
+  display: none !important;
+}
+
+.custom-navbar .custom-arrow {
+  font-size: 13px;
+  vertical-align: middle;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.custom-navbar .dropdown:hover .custom-arrow,
+.custom-navbar .show > .dropdown-toggle .custom-arrow {
+  transform: rotate(180deg);
+  color: #eec41e;
+}
+
+/* Dropdown menu */
+.custom-dropdown-menu {
+  margin-top: 10px !important;
+  padding: 10px 0;
+  border: none;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.custom-dropdown-menu .dropdown-item {
+  padding: 10px 24px;
+  color: #1b1c25;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.custom-dropdown-menu .dropdown-item:hover {
+  padding-left: 28px;
+  background-color: rgba(238, 196, 30, 0.12);
+  color: #eec41e;
+}
+
+/* Desktop hover-open dropdown */
+@media (min-width: 992px) {
+  .custom-navbar .dropdown-menu {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s ease;
+  }
+
+  .custom-navbar .nav-item.dropdown:hover .dropdown-menu {
+    margin-top: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+/* ================= 2. Footer ================= */
+.custom-footer {
+  background-color: #384252;
+  color: #a3b1c6;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-title {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.footer-desc {
+  color: #d1d8e0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.filter-white {
+  filter: brightness(0) invert(1);
+}
+
+/* Social buttons */
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 14px;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.social-btn:hover {
+  opacity: 0.85;
+  color: #ffffff;
+}
+
+.social-btn.facebook {
+  background-color: #4867aa;
+}
+.social-btn.twitter {
+  background-color: #55acee;
+}
+.social-btn.instagram {
+  background-color: #e4405f;
+}
+.social-btn.linkedin {
+  background-color: #0077b5;
+}
+
+/* Footer links */
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #eec41e;
+}
+
+/* Newsletter */
+.newsletter-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  background-color: #ffffff;
+  border-radius: 6px;
+}
+
+.newsletter-input {
+  padding: 8px 12px;
+  border: none;
+  background: transparent;
+  color: #333333;
+  font-size: 14px;
+  box-shadow: none !important;
+}
+
+.newsletter-input::placeholder {
+  color: #999999;
+}
+
+.newsletter-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 36px;
+  border: none;
+  border-radius: 4px;
+  background-color: #eec41e;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-btn:hover {
+  background-color: #d4ad16;
+}
+
+/* Footer credits */
+.footer-credits {
+  color: #8fa0b5;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.footer-credits .credit-link {
+  color: #eec41e;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.footer-credits .credit-link:hover {
+  text-decoration: underline;
+}
+
+/* Scroll to top */
+.scroll-to-top {
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  background-color: #eec41e;
+  color: #ffffff;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-to-top:hover {
+  background-color: #d4ad16;
+}
