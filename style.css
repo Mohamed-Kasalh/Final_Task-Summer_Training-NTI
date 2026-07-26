@@ -1,35 +1,83 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
-/* ================= Base ================= */
+/* =====================================================================
+   1. CSS VARIABLES (DESIGN TOKENS)
+   ===================================================================== */
+:root {
+  /* Brand / theme colors */
+  --tl-yellow: #eec41e;
+  --tl-yellow-dark: #d4ad16;
+  --tl-navy: #384252;
+  --tl-dark: #1b1c25;
+  --tl-bg-soft: #f8f9fa;
+  --tl-white: #ffffff;
+  --tl-muted: #6b7280;
+  --tl-text: #333333;
+
+  /* RGB triplets (for use inside rgba()) */
+  --tl-yellow-rgb: 238, 196, 30;
+  --tl-dark-rgb: 27, 28, 37;
+
+  /* Borders / dividers */
+  --tl-line: #eef0f3;
+  --tl-line-soft: #f1f2f5;
+  --tl-border-input: #e3e6ea;
+  --tl-dash: #d9dce2;
+
+  /* Footer-specific text tones */
+  --tl-footer-text: #a3b1c6;
+  --tl-footer-desc: #d1d8e0;
+  --tl-footer-credit: #8fa0b5;
+
+  /* Social brand colors */
+  --tl-facebook: #4867aa;
+  --tl-twitter: #55acee;
+  --tl-instagram: #e4405f;
+  --tl-linkedin: #0077b5;
+}
+
+/* =====================================================================
+   2. BASE
+   ===================================================================== */
 body {
   font-family: "Poppins", sans-serif;
-  color: #333;
+  color: var(--tl-text);
 }
 
-/* ================= Global Color Utilities ================= */
-.text-yellow {
-  color: #eec41e !important;
-}
-
-.btn-yellow {
-  background-color: #eec41e;
-  border: none;
-  color: #ffffff;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
-}
-
-.btn-yellow:hover {
-  background-color: #d4ad16;
-}
-
-/* ================= Main Content ================= */
 .main-content {
   min-height: 80vh;
   padding-top: 100px;
 }
 
-/* ================= 1. Header & Navbar ================= */
+/* ---------- Global color / button utilities ---------- */
+.text-yellow {
+  /* Utility override: intentionally kept !important so it always wins
+     over component-level text colors regardless of selector specificity. */
+  color: var(--tl-yellow) !important;
+}
+
+.btn-yellow,
+.newsletter-btn,
+.scroll-to-top {
+  background-color: var(--tl-yellow);
+  color: var(--tl-white);
+  transition: background-color 0.3s ease;
+}
+
+.btn-yellow:hover,
+.newsletter-btn:hover,
+.scroll-to-top:hover {
+  background-color: var(--tl-yellow-dark);
+}
+
+.btn-yellow {
+  border: none;
+  font-weight: 500;
+}
+
+/* =====================================================================
+   3. HEADER & NAVBAR
+   ===================================================================== */
 .custom-navbar {
   padding: 10px 0;
   background-color: rgba(255, 255, 255, 0.95);
@@ -38,14 +86,14 @@ body {
 }
 
 .custom-navbar .navbar-brand img {
-  height: 58px !important;
+  height: 58px;
   width: auto;
 }
 
 .custom-navbar .nav-link {
   position: relative;
-  padding: 15px 20px !important;
-  color: #1b1c25;
+  padding: 15px 20px;
+  color: var(--tl-dark);
   font-weight: 600;
   font-size: 18px;
   transition: color 0.3s ease;
@@ -59,7 +107,7 @@ body {
   left: 0;
   width: 0%;
   height: 2px;
-  background-color: #eec41e;
+  background-color: var(--tl-yellow);
   transition: width 0.3s ease-in-out;
 }
 
@@ -69,18 +117,18 @@ body {
 
 /* Active underline */
 .custom-navbar .nav-link.active::after {
-  width: 100% !important;
-  height: 1.5px !important;
+  width: 100%;
+  height: 1.5px;
 }
 
 .custom-navbar .nav-link:hover,
 .custom-navbar .nav-link.active {
-  color: #eec41e !important;
+  color: var(--tl-yellow);
 }
 
 /* Dropdown arrow */
 .custom-navbar .dropdown-toggle::after {
-  display: none !important;
+  display: none;
 }
 
 .custom-navbar .custom-arrow {
@@ -94,22 +142,22 @@ body {
 .custom-navbar .dropdown:hover .custom-arrow,
 .custom-navbar .show > .dropdown-toggle .custom-arrow {
   transform: rotate(180deg);
-  color: #eec41e;
+  color: var(--tl-yellow);
 }
 
 /* Dropdown menu */
 .custom-dropdown-menu {
-  margin-top: 10px !important;
+  margin-top: 10px;
   padding: 10px 0;
   border: none;
   border-radius: 12px;
-  background-color: #ffffff;
+  background-color: var(--tl-white);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .custom-dropdown-menu .dropdown-item {
   padding: 10px 24px;
-  color: #1b1c25;
+  color: var(--tl-dark);
   font-size: 16px;
   font-weight: 500;
   transition: all 0.2s ease-in-out;
@@ -117,8 +165,8 @@ body {
 
 .custom-dropdown-menu .dropdown-item:hover {
   padding-left: 28px;
-  background-color: rgba(238, 196, 30, 0.12);
-  color: #eec41e;
+  background-color: rgba(var(--tl-yellow-rgb), 0.12);
+  color: var(--tl-yellow);
 }
 
 /* Desktop hover-open dropdown */
@@ -139,21 +187,22 @@ body {
   }
 }
 
-/* ================= 2. Footer ================= */
+/* =====================================================================
+   4. FOOTER
+   ===================================================================== */
 .custom-footer {
-  background-color: #384252;
-  color: #a3b1c6;
-  font-family: "Poppins", sans-serif;
+  background-color: var(--tl-navy);
+  color: var(--tl-footer-text);
 }
 
 .footer-title {
-  color: #ffffff;
+  color: var(--tl-white);
   font-size: 18px;
   font-weight: 600;
 }
 
 .footer-desc {
-  color: #d1d8e0;
+  color: var(--tl-footer-desc);
   font-size: 14px;
   line-height: 1.6;
 }
@@ -170,7 +219,7 @@ body {
   width: 32px;
   height: 32px;
   border-radius: 4px;
-  color: #ffffff;
+  color: var(--tl-white);
   font-size: 14px;
   text-decoration: none;
   transition: opacity 0.3s ease;
@@ -178,20 +227,20 @@ body {
 
 .social-btn:hover {
   opacity: 0.85;
-  color: #ffffff;
+  color: var(--tl-white);
 }
 
 .social-btn.facebook {
-  background-color: #4867aa;
+  background-color: var(--tl-facebook);
 }
 .social-btn.twitter {
-  background-color: #55acee;
+  background-color: var(--tl-twitter);
 }
 .social-btn.instagram {
-  background-color: #e4405f;
+  background-color: var(--tl-instagram);
 }
 .social-btn.linkedin {
-  background-color: #0077b5;
+  background-color: var(--tl-linkedin);
 }
 
 /* Footer links */
@@ -200,14 +249,14 @@ body {
 }
 
 .footer-links a {
-  color: #ffffff;
+  color: var(--tl-white);
   font-size: 14px;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: #eec41e;
+  color: var(--tl-yellow);
 }
 
 /* Newsletter */
@@ -216,7 +265,7 @@ body {
   display: flex;
   align-items: center;
   padding: 4px;
-  background-color: #ffffff;
+  background-color: var(--tl-white);
   border-radius: 6px;
 }
 
@@ -224,9 +273,14 @@ body {
   padding: 8px 12px;
   border: none;
   background: transparent;
-  color: #333333;
+  color: var(--tl-text);
   font-size: 14px;
-  box-shadow: none !important;
+}
+
+/* Scoped + state-specific selector gives this enough specificity to beat
+   Bootstrap's .form-control:focus box-shadow without needing !important. */
+.newsletter-box .newsletter-input:focus {
+  box-shadow: none;
 }
 
 .newsletter-input::placeholder {
@@ -241,24 +295,17 @@ body {
   height: 36px;
   border: none;
   border-radius: 4px;
-  background-color: #eec41e;
-  color: #ffffff;
-  transition: background-color 0.3s ease;
-}
-
-.newsletter-btn:hover {
-  background-color: #d4ad16;
 }
 
 /* Footer credits */
 .footer-credits {
-  color: #8fa0b5;
+  color: var(--tl-footer-credit);
   font-size: 13px;
   line-height: 1.6;
 }
 
 .footer-credits .credit-link {
-  color: #eec41e;
+  color: var(--tl-yellow);
   font-weight: 500;
   text-decoration: none;
 }
@@ -278,13 +325,847 @@ body {
   width: 36px;
   height: 36px;
   border-radius: 4px;
-  background-color: #eec41e;
-  color: #ffffff;
   font-size: 14px;
   text-decoration: none;
+}
+
+/* =====================================================================
+   5. SHARED SECTION HEADING (used across Packages / Hotels / Places)
+   ===================================================================== */
+.section-eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--tl-yellow-dark);
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--tl-dark);
+  margin-bottom: 14px;
+}
+
+.section-subtitle {
+  max-width: 620px;
+  margin: 0 auto;
+  color: var(--tl-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* =====================================================================
+   6. SHARED HERO / SEARCH SECTIONS
+   (Packages, Hotels, Places all use the identical hero treatment)
+   ===================================================================== */
+.packages-hero,
+.hotels-hero,
+.places-hero {
+  padding: 60px 0 70px;
+  background-color: var(--tl-bg-soft);
+}
+
+.hero-heading-wrap {
+  margin-bottom: 36px;
+}
+
+/* Search card (Packages page) */
+.search-card {
+  background-color: var(--tl-white);
+  border-radius: 16px;
+  padding: 28px 28px 24px;
+  box-shadow: 0 15px 40px rgba(var(--tl-dark-rgb), 0.08);
+  margin-bottom: 56px;
+  border: 1px solid rgba(var(--tl-dark-rgb), 0.05);
+}
+
+.search-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--tl-navy);
+  margin-bottom: 6px;
+}
+
+.search-label i {
+  color: var(--tl-yellow-dark);
+  margin-right: 2px;
+}
+
+.search-input {
+  border: 1px solid var(--tl-border-input);
+  background-color: var(--tl-bg-soft);
+  border-radius: 8px;
+  padding: 11px 14px;
+  font-size: 14.5px;
+  color: var(--tl-dark);
+}
+
+.search-input:focus {
+  border-color: var(--tl-yellow);
+  box-shadow: 0 0 0 0.2rem rgba(var(--tl-yellow-rgb), 0.18);
+  background-color: var(--tl-white);
+}
+
+.search-btn {
+  padding: 11px 14px;
+  border-radius: 8px;
+  font-size: 15px;
+  letter-spacing: 0.2px;
+}
+
+.featured-grid {
+  margin-top: 8px;
+}
+
+/* =====================================================================
+   7. SHARED "ELEVATED" CARD PATTERN
+   (.package-card / .hotel-card / .destination-card)
+   ===================================================================== */
+.package-card,
+.hotel-card,
+.destination-card {
+  background-color: var(--tl-white);
+  border-radius: 16px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(var(--tl-dark-rgb), 0.07);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.package-card:hover,
+.hotel-card:hover,
+.destination-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(var(--tl-dark-rgb), 0.14);
+}
+
+/* Media */
+.package-media,
+.hotel-media,
+.destination-media {
+  position: relative;
+  overflow: hidden;
+}
+
+.package-media,
+.hotel-media {
+  height: 220px;
+}
+
+.destination-media {
+  height: 230px;
+}
+
+.package-media img,
+.hotel-media img,
+.destination-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.package-card:hover .package-media img,
+.hotel-card:hover .hotel-media img,
+.destination-card:hover .destination-media img {
+  transform: scale(1.08);
+}
+
+/* Badges */
+.package-badge,
+.hotel-badge,
+.destination-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: var(--tl-white);
+}
+
+.badge-featured,
+.badge-luxury,
+.badge-trending {
+  background-color: var(--tl-navy);
+}
+
+.badge-offer,
+.badge-value,
+.badge-top-pick {
+  background-color: var(--tl-yellow);
+  color: var(--tl-dark);
+}
+
+/* Footers */
+.package-footer,
+.hotel-footer,
+.destination-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--tl-line);
+}
+
+/* Price typography shared across all price blocks */
+.price-new {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--tl-dark);
+}
+
+.price-unit {
+  font-size: 13px;
+  color: var(--tl-muted);
+  margin-left: 3px;
+}
+
+.price-old {
+  font-size: 13px;
+  color: var(--tl-muted);
+  text-decoration: line-through;
+}
+
+/* Shared CTA button used inside every card family */
+.btn-book {
+  background-color: var(--tl-navy);
+  color: var(--tl-white);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
   transition: background-color 0.3s ease;
 }
 
-.scroll-to-top:hover {
-  background-color: #d4ad16;
+.btn-book:hover {
+  background-color: var(--tl-yellow);
+  color: var(--tl-dark);
+}
+
+/* =====================================================================
+   8. PACKAGE CARD SPECIFICS
+   ===================================================================== */
+.package-body {
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.package-title {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--tl-dark);
+  margin-bottom: 12px;
+}
+
+.package-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.package-rating {
+  font-size: 12.5px;
+  color: var(--tl-yellow);
+}
+
+.package-rating .rating-num {
+  color: var(--tl-muted);
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+.package-duration {
+  font-size: 13px;
+  color: var(--tl-muted);
+}
+
+.package-duration i {
+  color: var(--tl-navy);
+  margin-right: 3px;
+}
+
+.package-price {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+/* Boarding-pass style ticket divider — this section's signature detail */
+.ticket-divider {
+  position: relative;
+  height: 20px;
+  background-color: var(--tl-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ticket-divider .notch {
+  position: absolute;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--tl-bg-soft);
+  transform: translateY(-50%);
+}
+
+.ticket-divider .notch-left {
+  left: -10px;
+}
+
+.ticket-divider .notch-right {
+  right: -10px;
+}
+
+.ticket-divider .dash-line {
+  position: absolute;
+  left: 26px;
+  right: 26px;
+  top: 50%;
+  border-top: 1.5px dashed var(--tl-dash);
+  transform: translateY(-50%);
+}
+
+.ticket-divider i.fa-plane {
+  position: relative;
+  z-index: 1;
+  font-size: 11px;
+  color: var(--tl-yellow-dark);
+  background-color: var(--tl-white);
+  padding: 0 8px;
+  transform: rotate(90deg);
+}
+
+/* =====================================================================
+   9. SHARED "BORDERED" CARD PATTERN
+   (.category-card, extended by .hotel-mini-card / .landmark-card)
+   ===================================================================== */
+.category-section {
+  padding: 70px 0 80px;
+  background-color: var(--tl-white);
+}
+
+.category-heading-wrap {
+  margin-bottom: 30px;
+}
+
+/* Filter pills */
+.filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 44px;
+}
+
+.pill {
+  border: 1.5px solid var(--tl-border-input);
+  background-color: var(--tl-white);
+  color: var(--tl-navy);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 9px 20px;
+  border-radius: 30px;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.pill:hover {
+  border-color: var(--tl-yellow);
+  color: var(--tl-yellow-dark);
+}
+
+.pill.active {
+  background-color: var(--tl-yellow);
+  border-color: var(--tl-yellow);
+  color: var(--tl-dark);
+}
+
+/* Category cards */
+.category-card {
+  background-color: var(--tl-white);
+  border: 1px solid var(--tl-line);
+  border-radius: 14px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(var(--tl-dark-rgb), 0.1);
+}
+
+.category-media {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+}
+
+.category-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.category-card:hover .category-media img {
+  transform: scale(1.06);
+}
+
+.category-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background-color: rgba(var(--tl-dark-rgb), 0.75);
+  color: var(--tl-white);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.category-body {
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.category-location {
+  font-size: 12.5px;
+  color: var(--tl-muted);
+  margin-bottom: 8px;
+}
+
+.category-location i {
+  color: var(--tl-yellow-dark);
+  margin-right: 4px;
+}
+
+.category-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--tl-dark);
+  margin-bottom: 16px;
+}
+
+.category-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--tl-line-soft);
+}
+
+.category-price {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--tl-dark);
+}
+
+.category-price small {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--tl-muted);
+}
+
+.explore-link {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--tl-navy);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition:
+    color 0.25s ease,
+    gap 0.25s ease;
+}
+
+.explore-link i {
+  font-size: 12px;
+  transition: transform 0.25s ease;
+}
+
+.explore-link:hover {
+  color: var(--tl-yellow-dark);
+}
+
+.explore-link:hover i {
+  transform: translateX(3px);
+}
+
+/* Hotel / Landmark grid tweaks that extend .category-card */
+.hotel-mini-card .category-title {
+  margin-bottom: 8px;
+}
+
+.landmark-card .category-title {
+  margin-bottom: 6px;
+}
+
+.landmark-card .category-location {
+  margin-bottom: 14px;
+}
+
+.info-strip {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  padding: 0;
+  margin: 0 0 16px;
+  font-size: 12.5px;
+  color: var(--tl-muted);
+  font-weight: 500;
+}
+
+.info-strip li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.info-strip i {
+  color: var(--tl-yellow-dark);
+  font-size: 12px;
+}
+
+/* Load more CTA */
+.load-more-wrap {
+  margin-top: 48px;
+}
+
+.btn-load-more {
+  background-color: var(--tl-white);
+  border: 1.5px solid var(--tl-navy);
+  color: var(--tl-navy);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px 30px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-load-more:hover {
+  background-color: var(--tl-navy);
+  color: var(--tl-white);
+}
+
+/* =====================================================================
+   10. HOTEL CARD SPECIFICS
+   ===================================================================== */
+.hotel-body {
+  padding: 22px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.hotel-top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.hotel-title {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--tl-dark);
+  margin-bottom: 0;
+}
+
+/* Score chip — e.g. "4.9 Superb" */
+.hotel-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.1;
+  background-color: var(--tl-navy);
+  color: var(--tl-white);
+  border-radius: 8px;
+  padding: 5px 10px;
+  flex-shrink: 0;
+}
+
+.hotel-score .score-num {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.hotel-score .score-label {
+  font-size: 10px;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.hotel-location {
+  font-size: 13px;
+  color: var(--tl-muted);
+  margin-bottom: 10px;
+}
+
+.hotel-location i {
+  color: var(--tl-yellow-dark);
+  margin-right: 3px;
+}
+
+.hotel-rating {
+  font-size: 13px;
+  color: var(--tl-yellow);
+  margin-bottom: 16px;
+}
+
+.hotel-rating-sm {
+  font-size: 11.5px;
+  margin-bottom: 10px;
+}
+
+/* Amenities strip — a quiet row of circular icon chips */
+.amenity-strip {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  margin: 0 0 18px;
+}
+
+.amenity-strip li {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--tl-bg-soft);
+  color: var(--tl-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  border: 1px solid var(--tl-line);
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.hotel-card:hover .amenity-strip li {
+  background-color: rgba(var(--tl-yellow-rgb), 0.14);
+  color: var(--tl-yellow-dark);
+}
+
+.amenity-strip-sm {
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.amenity-strip-sm li {
+  width: 26px;
+  height: 26px;
+  font-size: 11px;
+}
+
+.hotel-price {
+  line-height: 1.3;
+}
+
+/* =====================================================================
+   11. DESTINATION CARD SPECIFICS
+   ===================================================================== */
+.destination-body {
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.destination-title {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--tl-dark);
+  margin-bottom: 10px;
+}
+
+.destination-title i {
+  color: var(--tl-yellow-dark);
+  font-size: 16px;
+  margin-right: 3px;
+}
+
+.destination-meta {
+  margin-bottom: 14px;
+}
+
+.destination-rating {
+  font-size: 13.5px;
+  color: var(--tl-yellow);
+  font-weight: 600;
+}
+
+.destination-rating .rating-num {
+  color: var(--tl-dark);
+  margin: 0 4px;
+}
+
+.destination-rating .review-count {
+  color: var(--tl-muted);
+  font-weight: 400;
+}
+
+.duration-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  background-color: var(--tl-bg-soft);
+  color: var(--tl-navy);
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin-bottom: 18px;
+}
+
+.destination-price {
+  line-height: 1.25;
+}
+
+.destination-price .price-label {
+  display: block;
+  font-size: 11.5px;
+  color: var(--tl-muted);
+}
+
+/* Attraction counter "stamp" — a passport-stamp badge, dashed and
+   slightly rotated, as if hand-stamped onto the photo */
+.attraction-stamp {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  border: 2px dashed rgba(255, 255, 255, 0.85);
+  background-color: rgba(var(--tl-dark-rgb), 0.55);
+  backdrop-filter: blur(2px);
+  color: var(--tl-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.1;
+  transform: rotate(-10deg);
+  transition: transform 0.3s ease;
+}
+
+.destination-card:hover .attraction-stamp {
+  transform: rotate(-10deg) scale(1.06);
+}
+
+.attraction-stamp .stamp-num {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.attraction-stamp .stamp-label {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+/* =====================================================================
+   12. RESPONSIVE ADJUSTMENTS
+   (Consolidated by breakpoint across Packages / Hotels / Places)
+   ===================================================================== */
+@media (max-width: 991.98px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .search-card {
+    padding: 22px 18px 18px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  /* Hero spacing */
+  .packages-hero,
+  .hotels-hero,
+  .places-hero {
+    padding: 44px 0 50px;
+  }
+
+  .category-section {
+    padding: 50px 0 60px;
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+  }
+
+  .search-card {
+    margin-bottom: 40px;
+  }
+
+  /* Card footers stack on small screens across all card families */
+  .package-footer,
+  .hotel-footer,
+  .destination-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .package-footer .btn-book,
+  .hotel-footer .btn-book,
+  .destination-footer .btn-book {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hotel-top-row {
+    flex-wrap: wrap;
+  }
+
+  .attraction-stamp {
+    width: 64px;
+    height: 64px;
+  }
+
+  .attraction-stamp .stamp-num {
+    font-size: 15px;
+  }
 }

@@ -23,7 +23,10 @@
   <body>
     <!-- ================= 1. Header / Navbar ================= -->
     <header>
-      <nav class="navbar navbar-expand-lg fixed-top custom-navbar" aria-label="Main navigation">
+      <nav
+        class="navbar navbar-expand-lg fixed-top custom-navbar"
+        aria-label="Main navigation"
+      >
         <div class="container">
           <!-- Logo -->
           <a class="navbar-brand" href="index.html#home">
@@ -56,17 +59,37 @@
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Home <i class="fa-solid fa-chevron-down ms-1 custom-arrow" aria-hidden="true"></i>
+                  Home
+                  <i
+                    class="fa-solid fa-chevron-down ms-1 custom-arrow"
+                    aria-hidden="true"
+                  ></i>
                 </a>
                 <ul
                   class="dropdown-menu custom-dropdown-menu"
                   aria-labelledby="homeDropdown"
                 >
-                  <li><a class="dropdown-item" href="index.html#about">About</a></li>
-                  <li><a class="dropdown-item" href="index.html#services">Services</a></li>
-                  <li><a class="dropdown-item" href="index.html#gallery">Gallery</a></li>
-                  <li><a class="dropdown-item" href="index.html#blog">Blog</a></li>
-                  <li><a class="dropdown-item" href="index.html#contact">Contact</a></li>
+                  <li>
+                    <a class="dropdown-item" href="index.html#about">About</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="index.html#services"
+                      >Services</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="index.html#gallery"
+                      >Gallery</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="index.html#blog">Blog</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="index.html#contact"
+                      >Contact</a
+                    >
+                  </li>
                 </ul>
               </li>
 
@@ -75,7 +98,12 @@
                 <a class="nav-link" href="packages.html">Tour Packages</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="hotels.html" aria-current="page">Hotels</a>
+                <a
+                  class="nav-link active"
+                  href="hotels.html"
+                  aria-current="page"
+                  >Hotels</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="places.html">Places To Visit</a>
@@ -88,10 +116,649 @@
 
     <!-- ================= Main Content Start ================= -->
     <main class="main-content">
-      <div class="container">
-        <h1 class="mt-5">Hotels</h1>
-        <!-- Page content goes here -->
-      </div>
+      <!-- ================= 1. Hero / Search & Featured Hotels ================= -->
+      <section class="hotels-hero">
+        <div class="container">
+          <div class="text-center hero-heading-wrap">
+            <span class="section-eyebrow">Exclusive Stays</span>
+            <h1 class="section-title">Find &amp; Book The Best Hotels</h1>
+            <p class="section-subtitle">
+              Discover luxury resorts, boutique stays, and budget-friendly
+              accommodations tailored to your budget.
+            </p>
+          </div>
+
+          <!-- Search / Filter Bar -->
+          <form class="search-card" novalidate>
+            <div class="row g-3 g-lg-2 align-items-end">
+              <div class="col-lg-3 col-md-6">
+                <label class="search-label" for="hotelDestination">
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                  Destination / Hotel
+                </label>
+                <input
+                  type="text"
+                  class="form-control search-input"
+                  id="hotelDestination"
+                  placeholder="Where are you going?"
+                />
+              </div>
+              <div class="col-lg-2 col-md-6">
+                <label class="search-label" for="checkInDate">
+                  <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                  Check-in
+                </label>
+                <input
+                  type="date"
+                  class="form-control search-input"
+                  id="checkInDate"
+                />
+              </div>
+              <div class="col-lg-2 col-md-6">
+                <label class="search-label" for="checkOutDate">
+                  <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                  Check-out
+                </label>
+                <input
+                  type="date"
+                  class="form-control search-input"
+                  id="checkOutDate"
+                />
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <label class="search-label" for="guestsRooms">
+                  <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+                  Guests &amp; Rooms
+                </label>
+                <select class="form-select search-input" id="guestsRooms">
+                  <option selected>2 Guests, 1 Room</option>
+                  <option>2 Guests, 2 Rooms</option>
+                  <option>4 Guests, 2 Rooms</option>
+                  <option>1 Guest, 1 Room</option>
+                </select>
+              </div>
+              <div class="col-lg-2 col-md-6">
+                <button class="btn btn-yellow search-btn w-100" type="submit">
+                  <i
+                    class="fa-solid fa-magnifying-glass"
+                    aria-hidden="true"
+                  ></i>
+                  <span class="d-lg-none ms-2">Search Hotels</span>
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <!-- Featured Hotels Grid -->
+          <div class="row g-4 featured-grid">
+            <!-- Hotel Card 1 -->
+            <div class="col-lg-4 col-md-6">
+              <article class="hotel-card">
+                <div class="hotel-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80"
+                    alt="Luxury resort pool with palm trees at sunset"
+                    loading="lazy"
+                  />
+                  <span class="hotel-badge badge-luxury">5-Star Luxury</span>
+                </div>
+                <div class="hotel-body">
+                  <div class="hotel-top-row">
+                    <h3 class="hotel-title">The Azure Palm Resort</h3>
+                    <span class="hotel-score">
+                      <span class="score-num">4.9</span>
+                      <span class="score-label">Superb</span>
+                    </span>
+                  </div>
+                  <div class="hotel-location">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Bali, Indonesia
+                  </div>
+                  <div class="hotel-rating" aria-label="Rated 5 out of 5 stars">
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                  </div>
+
+                  <!-- Amenities strip -->
+                  <ul class="amenity-strip" aria-label="Hotel amenities">
+                    <li title="Free Wi-Fi">
+                      <i class="fa-solid fa-wifi" aria-hidden="true"></i>
+                    </li>
+                    <li title="Swimming Pool">
+                      <i
+                        class="fa-solid fa-person-swimming"
+                        aria-hidden="true"
+                      ></i>
+                    </li>
+                    <li title="Spa">
+                      <i class="fa-solid fa-spa" aria-hidden="true"></i>
+                    </li>
+                    <li title="Breakfast Included">
+                      <i class="fa-solid fa-mug-saucer" aria-hidden="true"></i>
+                    </li>
+                  </ul>
+
+                  <div class="hotel-footer">
+                    <div class="hotel-price">
+                      <span class="price-new">$180</span>
+                      <span class="price-unit">/ night</span>
+                    </div>
+                    <a href="#" class="btn btn-book">Book Now</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Hotel Card 2 -->
+            <div class="col-lg-4 col-md-6">
+              <article class="hotel-card">
+                <div class="hotel-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1568084680786-a84f91d1153c?auto=format&fit=crop&w=800&q=80"
+                    alt="Modern boutique hotel exterior with lounge chairs"
+                    loading="lazy"
+                  />
+                  <span class="hotel-badge badge-value">Best Value</span>
+                </div>
+                <div class="hotel-body">
+                  <div class="hotel-top-row">
+                    <h3 class="hotel-title">Marina Bay Boutique</h3>
+                    <span class="hotel-score">
+                      <span class="score-num">4.6</span>
+                      <span class="score-label">Great</span>
+                    </span>
+                  </div>
+                  <div class="hotel-location">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Dubai, UAE
+                  </div>
+                  <div
+                    class="hotel-rating"
+                    aria-label="Rated 4.5 out of 5 stars"
+                  >
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i
+                      class="fa-solid fa-star-half-stroke"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+
+                  <ul class="amenity-strip" aria-label="Hotel amenities">
+                    <li title="Free Wi-Fi">
+                      <i class="fa-solid fa-wifi" aria-hidden="true"></i>
+                    </li>
+                    <li title="Gym">
+                      <i class="fa-solid fa-dumbbell" aria-hidden="true"></i>
+                    </li>
+                    <li title="Breakfast Included">
+                      <i class="fa-solid fa-mug-saucer" aria-hidden="true"></i>
+                    </li>
+                    <li title="Parking">
+                      <i
+                        class="fa-solid fa-square-parking"
+                        aria-hidden="true"
+                      ></i>
+                    </li>
+                  </ul>
+
+                  <div class="hotel-footer">
+                    <div class="hotel-price">
+                      <span class="price-new">$96</span>
+                      <span class="price-unit">/ night</span>
+                    </div>
+                    <a href="#" class="btn btn-book">Book Now</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Hotel Card 3 -->
+            <div class="col-lg-4 col-md-6">
+              <article class="hotel-card">
+                <div class="hotel-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80"
+                    alt="Beachfront villa with ocean view at golden hour"
+                    loading="lazy"
+                  />
+                  <span class="hotel-badge badge-luxury">5-Star Luxury</span>
+                </div>
+                <div class="hotel-body">
+                  <div class="hotel-top-row">
+                    <h3 class="hotel-title">Coral Coast Beach Villas</h3>
+                    <span class="hotel-score">
+                      <span class="score-num">4.8</span>
+                      <span class="score-label">Superb</span>
+                    </span>
+                  </div>
+                  <div class="hotel-location">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Santorini, Greece
+                  </div>
+                  <div class="hotel-rating" aria-label="Rated 5 out of 5 stars">
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                  </div>
+
+                  <ul class="amenity-strip" aria-label="Hotel amenities">
+                    <li title="Free Wi-Fi">
+                      <i class="fa-solid fa-wifi" aria-hidden="true"></i>
+                    </li>
+                    <li title="Swimming Pool">
+                      <i
+                        class="fa-solid fa-person-swimming"
+                        aria-hidden="true"
+                      ></i>
+                    </li>
+                    <li title="Spa">
+                      <i class="fa-solid fa-spa" aria-hidden="true"></i>
+                    </li>
+                    <li title="Sea View">
+                      <i class="fa-solid fa-water" aria-hidden="true"></i>
+                    </li>
+                  </ul>
+
+                  <div class="hotel-footer">
+                    <div class="hotel-price">
+                      <span class="price-new">$245</span>
+                      <span class="price-unit">/ night</span>
+                    </div>
+                    <a href="#" class="btn btn-book">Book Now</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 2. Explore Hotels by Category ================= -->
+      <section class="category-section">
+        <div class="container">
+          <div class="text-center category-heading-wrap">
+            <span class="section-eyebrow">Browse By Style</span>
+            <h2 class="section-title">Explore Hotels by Category</h2>
+          </div>
+
+          <!-- Filter Pills -->
+          <div
+            class="filter-pills"
+            role="tablist"
+            aria-label="Filter hotels by category"
+          >
+            <button
+              class="pill active"
+              type="button"
+              role="tab"
+              aria-selected="true"
+            >
+              All Hotels
+            </button>
+            <button class="pill" type="button" role="tab" aria-selected="false">
+              Luxury Resorts
+            </button>
+            <button class="pill" type="button" role="tab" aria-selected="false">
+              Beachfront
+            </button>
+            <button class="pill" type="button" role="tab" aria-selected="false">
+              Budget Stays
+            </button>
+            <button class="pill" type="button" role="tab" aria-selected="false">
+              Boutique &amp; Villa
+            </button>
+          </div>
+
+          <!-- Hotel Grid -->
+          <div class="row g-4 category-grid">
+            <div class="col-lg-4 col-md-6 col-12">
+              <article class="category-card hotel-mini-card">
+                <div class="category-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=700&q=80"
+                    alt="Elegant hotel lobby with modern chandelier"
+                    loading="lazy"
+                  />
+                  <span class="category-tag">Luxury Resorts</span>
+                </div>
+                <div class="category-body">
+                  <div class="category-location">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Maldives
+                  </div>
+                  <h3 class="category-title">Velaa Private Island</h3>
+                  <div
+                    class="hotel-rating hotel-rating-sm"
+                    aria-label="Rated 5 out of 5 stars"
+                  >
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                  </div>
+                  <ul
+                    class="amenity-strip amenity-strip-sm"
+                    aria-label="Hotel amenities"
+                  >
+                    <li title="Free Wi-Fi">
+                      <i class="fa-solid fa-wifi" aria-hidden="true"></i>
+                    </li>
+                    <li title="Swimming Pool">
+                      <i
+                        class="fa-solid fa-person-swimming"
+                        aria-hidden="true"
+                      ></i>
+                    </li>
+                    <li title="Spa">
+                      <i class="fa-solid fa-spa" aria-hidden="true"></i>
+                    </li>
+                  </ul>
+                  <div class="category-footer">
+                    <span class="category-price"
+                      >$410 <small>/ night</small></span
+                    >
+                    <a href="#" class="explore-link">
+                      Explore Hotel
+                      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+              <article class="category-card hotel-mini-card">
+                <div class="category-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1519449556851-5720b33024e7?auto=format&fit=crop&w=700&q=80"
+                    alt="Beachfront hotel with sun loungers and turquoise sea"
+                    loading="lazy"
+                  />
+                  <span class="category-tag">Beachfront</span>
+                </div>
+                <div class="category-body">
+                  <div class="category-location">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Cancun, Mexico
+                  </div>
+                  <h3 class="category-title">Riviera Sands Beach Hotel</h3>
+                  <div
+                    class="hotel-rating hotel-rating-sm"
+                    aria-label="Rated 4.5 out of 5 stars"
+                  >
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i
+                      class="fa-solid fa-star-half-stroke"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+                  <ul
+                    class="amenity-strip amenity-strip-sm"
+                    aria-label="Hotel amenities"
+                  >
+                    <li title="Free Wi-Fi">
+                      <i class="fa-solid fa-wifi" aria-hidden="true"></i>
+                    </li>
+                    <li title="Beach Access">
+                      <i
+                        class="fa-solid fa-umbrella-beach"
+                        aria-hidden="true"
+                      ></i>
+                    </li>
+                    <li title="Breakfast Included">
+                      <i class="fa-solid fa-mug-saucer" aria-hidden="true"></i>
+                    </li>
+                  </ul>
+                  <div class="category-footer">
+                    <span class="category-price"
+                      >$155 <small>/ night</small></span
+                    >
+                    <a href="#" class="explore-link">
+                      Explore Hotel
+                      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+              <article class="category-card hotel-mini-card">
+                <div class="category-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=700&q=80"
+                    alt="Simple cozy budget hotel room with clean bedding"
+                    loading="lazy"
+                  />
+                  <span class="category-tag">Budget Stays</span>
+                </div>
+                <div class="category-body">
+                  <div class="category-location">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Prague, Czechia
+                  </div>
+                  <h3 class="category-title">Old Town Traveler Inn</h3>
+                  <div
+                    class="hotel-rating hotel-rating-sm"
+                    aria-label="Rated 4 out of 5 stars"
+                  >
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-regular fa-star" aria-hidden="true"></i>
+                  </div>
+                  <ul
+                    class="amenity-strip amenity-strip-sm"
+                    aria-label="Hotel amenities"
+                  >
+                    <li title="Free Wi-Fi">
+                      <i class="fa-solid fa-wifi" aria-hidden="true"></i>
+                    </li>
+                    <li title="24/7 Front Desk">
+                      <i
+                        class="fa-solid fa-bell-concierge"
+                        aria-hidden="true"
+                      ></i>
+                    </li>
+                  </ul>
+                  <div class="category-footer">
+                    <span class="category-price"
+                      >$54 <small>/ night</small></span
+                    >
+                    <a href="#" class="explore-link">
+                      Explore Hotel
+                      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+              <article class="category-card hotel-mini-card">
+                <div class="category-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=700&q=80"
+                    alt="Charming boutique villa courtyard with greenery"
+                    loading="lazy"
+                  />
+                  <span class="category-tag">Boutique &amp; Villa</span>
+                </div>
+                <div class="category-body">
+                  <div class="category-location">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Tuscany, Italy
+                  </div>
+                  <h3 class="category-title">Villa Alba Boutique Stay</h3>
+                  <div
+                    class="hotel-rating hotel-rating-sm"
+                    aria-label="Rated 4.7 out of 5 stars"
+                  >
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i
+                      class="fa-solid fa-star-half-stroke"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+                  <ul
+                    class="amenity-strip amenity-strip-sm"
+                    aria-label="Hotel amenities"
+                  >
+                    <li title="Free Wi-Fi">
+                      <i class="fa-solid fa-wifi" aria-hidden="true"></i>
+                    </li>
+                    <li title="Breakfast Included">
+                      <i class="fa-solid fa-mug-saucer" aria-hidden="true"></i>
+                    </li>
+                    <li title="Garden">
+                      <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+                    </li>
+                  </ul>
+                  <div class="category-footer">
+                    <span class="category-price"
+                      >$210 <small>/ night</small></span
+                    >
+                    <a href="#" class="explore-link">
+                      Explore Hotel
+                      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+              <article class="category-card hotel-mini-card">
+                <div class="category-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=700&q=80"
+                    alt="Grand luxury hotel exterior with fountain"
+                    loading="lazy"
+                  />
+                  <span class="category-tag">Luxury Resorts</span>
+                </div>
+                <div class="category-body">
+                  <div class="category-location">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Zurich, Switzerland
+                  </div>
+                  <h3 class="category-title">Alpine Grand Palace Hotel</h3>
+                  <div
+                    class="hotel-rating hotel-rating-sm"
+                    aria-label="Rated 4.9 out of 5 stars"
+                  >
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                  </div>
+                  <ul
+                    class="amenity-strip amenity-strip-sm"
+                    aria-label="Hotel amenities"
+                  >
+                    <li title="Free Wi-Fi">
+                      <i class="fa-solid fa-wifi" aria-hidden="true"></i>
+                    </li>
+                    <li title="Spa">
+                      <i class="fa-solid fa-spa" aria-hidden="true"></i>
+                    </li>
+                    <li title="Fine Dining">
+                      <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+                    </li>
+                  </ul>
+                  <div class="category-footer">
+                    <span class="category-price"
+                      >$390 <small>/ night</small></span
+                    >
+                    <a href="#" class="explore-link">
+                      Explore Hotel
+                      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+              <article class="category-card hotel-mini-card">
+                <div class="category-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1590073844006-33379778ae09?auto=format&fit=crop&w=700&q=80"
+                    alt="Cozy budget-friendly hostel common area"
+                    loading="lazy"
+                  />
+                  <span class="category-tag">Budget Stays</span>
+                </div>
+                <div class="category-body">
+                  <div class="category-location">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Bangkok, Thailand
+                  </div>
+                  <h3 class="category-title">Riverside Backpacker Lodge</h3>
+                  <div
+                    class="hotel-rating hotel-rating-sm"
+                    aria-label="Rated 4.2 out of 5 stars"
+                  >
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <i class="fa-regular fa-star" aria-hidden="true"></i>
+                  </div>
+                  <ul
+                    class="amenity-strip amenity-strip-sm"
+                    aria-label="Hotel amenities"
+                  >
+                    <li title="Free Wi-Fi">
+                      <i class="fa-solid fa-wifi" aria-hidden="true"></i>
+                    </li>
+                    <li title="Swimming Pool">
+                      <i
+                        class="fa-solid fa-person-swimming"
+                        aria-hidden="true"
+                      ></i>
+                    </li>
+                  </ul>
+                  <div class="category-footer">
+                    <span class="category-price"
+                      >$32 <small>/ night</small></span
+                    >
+                    <a href="#" class="explore-link">
+                      Explore Hotel
+                      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Load More CTA -->
+          <div class="text-center load-more-wrap">
+            <button class="btn btn-load-more" type="button">
+              Load More Hotels
+              <i class="fa-solid fa-chevron-down ms-2" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
     <!-- ================= Main Content End ================= -->
 
@@ -170,7 +837,9 @@
               diam.
             </p>
             <form class="newsletter-box" action="#" novalidate>
-              <label for="newsletterEmail" class="visually-hidden">Email address</label>
+              <label for="newsletterEmail" class="visually-hidden"
+                >Email address</label
+              >
               <input
                 id="newsletterEmail"
                 type="email"
@@ -178,7 +847,11 @@
                 placeholder="Enter email"
                 required
               />
-              <button class="btn newsletter-btn" type="submit" aria-label="Subscribe">
+              <button
+                class="btn newsletter-btn"
+                type="submit"
+                aria-label="Subscribe"
+              >
                 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
               </button>
             </form>
@@ -189,13 +862,21 @@
         <div class="text-center footer-credits pt-3">
           <p class="mb-0">
             Designed and Developed by
-            <a href="https://uideck.com" target="_blank" rel="noopener noreferrer" class="credit-link"
+            <a
+              href="https://uideck.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="credit-link"
               >UIdeck</a
             >
           </p>
           <p class="mb-0">
             Distributed by
-            <a href="https://themewagon.com" target="_blank" rel="noopener noreferrer" class="credit-link"
+            <a
+              href="https://themewagon.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="credit-link"
               >ThemeWagon</a
             >
           </p>

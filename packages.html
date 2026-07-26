@@ -116,10 +116,437 @@
 
     <!-- ================= Main Content Start ================= -->
     <main class="main-content">
-      <div class="container">
-        <h1 class="mt-5">Tour Packages</h1>
-        <!-- Page content goes here -->
-      </div>
+      <!-- ================= 1. Hero / Search & Featured Packages ================= -->
+      <section class="packages-hero">
+        <div class="container">
+          <div class="text-center hero-heading-wrap">
+            <span class="section-eyebrow">Curated Journeys</span>
+            <h1 class="section-title">Find Your Perfect Gateway</h1>
+            <p class="section-subtitle">
+              Handpicked tours, transparent pricing, zero hassle. Search by
+              destination, date, and budget to start your next trip.
+            </p>
+          </div>
+
+          <!-- Search / Filter Bar -->
+          <form class="search-card" novalidate>
+            <div class="row g-3 g-lg-2 align-items-end">
+              <div class="col-lg-3 col-md-6">
+                <label class="search-label" for="destinationInput">
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                  Destination
+                </label>
+                <select class="form-select search-input" id="destinationInput">
+                  <option selected>Anywhere</option>
+                  <option>Santorini, Greece</option>
+                  <option>Bali, Indonesia</option>
+                  <option>Swiss Alps, Switzerland</option>
+                  <option>Kyoto, Japan</option>
+                </select>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <label class="search-label" for="travelDateInput">
+                  <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                  Travel Date
+                </label>
+                <input
+                  type="date"
+                  class="form-control search-input"
+                  id="travelDateInput"
+                />
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <label class="search-label" for="budgetInput">
+                  <i class="fa-solid fa-sack-dollar" aria-hidden="true"></i>
+                  Budget
+                </label>
+                <select class="form-select search-input" id="budgetInput">
+                  <option selected>Any Budget</option>
+                  <option>$500 &ndash; $1,000</option>
+                  <option>$1,000 &ndash; $2,000</option>
+                  <option>$2,000+</option>
+                </select>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <button class="btn btn-yellow search-btn w-100" type="submit">
+                  <i
+                    class="fa-solid fa-magnifying-glass me-2"
+                    aria-hidden="true"
+                  ></i
+                  >Search Packages
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <!-- Featured Cards Grid -->
+          <div class="row g-4 featured-grid">
+            <!-- Card 1 -->
+            <div class="col-lg-4 col-md-6">
+              <article class="package-card">
+                <div class="package-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80"
+                    alt="Santorini caldera view with white buildings and blue domes"
+                    loading="lazy"
+                  />
+                  <span class="package-badge badge-featured">Featured</span>
+                </div>
+                <div class="ticket-divider" aria-hidden="true">
+                  <span class="notch notch-left"></span>
+                  <span class="dash-line"></span>
+                  <i class="fa-solid fa-plane"></i>
+                  <span class="notch notch-right"></span>
+                </div>
+                <div class="package-body">
+                  <h3 class="package-title">Santorini Sunset Escape</h3>
+                  <div class="package-meta">
+                    <span
+                      class="package-rating"
+                      aria-label="Rated 4.8 out of 5"
+                    >
+                      <i class="fa-solid fa-star" aria-hidden="true"></i>
+                      <i class="fa-solid fa-star" aria-hidden="true"></i>
+                      <i class="fa-solid fa-star" aria-hidden="true"></i>
+                      <i class="fa-solid fa-star" aria-hidden="true"></i>
+                      <i
+                        class="fa-solid fa-star-half-stroke"
+                        aria-hidden="true"
+                      ></i>
+                      <span class="rating-num">4.8</span>
+                    </span>
+                    <span class="package-duration">
+                      <i class="fa-regular fa-clock" aria-hidden="true"></i> 5
+                      Days / 4 Nights
+                    </span>
+                  </div>
+                  <div class="package-footer">
+                    <div class="package-price">
+                      <span class="price-old">$1,240</span>
+                      <span class="price-new">$1,054</span>
+                    </div>
+                    <a href="#" class="btn btn-book">Book Now</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-lg-4 col-md-6">
+              <article class="package-card">
+                <div class="package-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=800&q=80"
+                    alt="Overwater bungalows on a turquoise lagoon"
+                    loading="lazy"
+                  />
+                  <span class="package-badge badge-offer">15% OFF</span>
+                </div>
+                <div class="ticket-divider" aria-hidden="true">
+                  <span class="notch notch-left"></span>
+                  <span class="dash-line"></span>
+                  <i class="fa-solid fa-plane"></i>
+                  <span class="notch notch-right"></span>
+                </div>
+                <div class="package-body">
+                  <h3 class="package-title">Maldives Overwater Retreat</h3>
+                  <div class="package-meta">
+                    <span class="package-rating" aria-label="Rated 5 out of 5">
+                      <i class="fa-solid fa-star" aria-hidden="true"></i>
+                      <i class="fa-solid fa-star" aria-hidden="true"></i>
+                      <i class="fa-solid fa-star" aria-hidden="true"></i>
+                      <i class="fa-solid fa-star" aria-hidden="true"></i>
+                      <i class="fa-solid fa-star" aria-hidden="true"></i>
+                      <span class="rating-num">5.0</span>
+                    </span>
+                    <span class="package-duration">
+                      <i class="fa-regular fa-clock" aria-hidden="true"></i> 7
+                      Days / 6 Nights
+                    </span>
+                  </div>
+                  <div class="package-footer">
+                    <div class="package-price">
+                      <span class="price-old">$2,860</span>
+                      <span class="price-new">$2,431</span>
+                    </div>
+                    <a href="#" class="btn btn-book">Book Now</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-lg-4 col-md-6">
+              <article class="package-card">
+                <div class="package-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80"
+                    alt="Snow capped Swiss Alps mountain range"
+                    loading="lazy"
+                  />
+                  <span class="package-badge badge-featured">Featured</span>
+                </div>
+                <div class="ticket-divider" aria-hidden="true">
+                  <span class="notch notch-left"></span>
+                  <span class="dash-line"></span>
+                  <i class="fa-solid fa-plane"></i>
+                  <span class="notch notch-right"></span>
+                </div>
+                <div class="package-body">
+                  <h3 class="package-title">Swiss Alps Adventure Trail</h3>
+                  <div class="package-meta">
+                    <span
+                      class="package-rating"
+                      aria-label="Rated 4.6 out of 5"
+                    >
+                      <i class="fa-solid fa-star" aria-hidden="true"></i>
+                      <i class="fa-solid fa-star" aria-hidden="true"></i>
+                      <i class="fa-solid fa-star" aria-hidden="true"></i>
+                      <i class="fa-solid fa-star" aria-hidden="true"></i>
+                      <i class="fa-regular fa-star" aria-hidden="true"></i>
+                      <span class="rating-num">4.6</span>
+                    </span>
+                    <span class="package-duration">
+                      <i class="fa-regular fa-clock" aria-hidden="true"></i> 6
+                      Days / 5 Nights
+                    </span>
+                  </div>
+                  <div class="package-footer">
+                    <div class="package-price">
+                      <span class="price-old">$1,690</span>
+                      <span class="price-new">$1,436</span>
+                    </div>
+                    <a href="#" class="btn btn-book">Book Now</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 2. Explore Packages by Category ================= -->
+      <section class="category-section">
+        <div class="container">
+          <div class="text-center category-heading-wrap">
+            <span class="section-eyebrow">Browse By Style</span>
+            <h2 class="section-title">Explore Packages by Category</h2>
+          </div>
+
+          <!-- Filter Pills -->
+          <div
+            class="filter-pills"
+            role="tablist"
+            aria-label="Filter packages by category"
+          >
+            <button
+              class="pill active"
+              type="button"
+              role="tab"
+              aria-selected="true"
+            >
+              All Packages
+            </button>
+            <button class="pill" type="button" role="tab" aria-selected="false">
+              Family Friendly
+            </button>
+            <button class="pill" type="button" role="tab" aria-selected="false">
+              Honeymoon
+            </button>
+            <button class="pill" type="button" role="tab" aria-selected="false">
+              Adventure &amp; Camping
+            </button>
+            <button class="pill" type="button" role="tab" aria-selected="false">
+              Luxury Getaways
+            </button>
+          </div>
+
+          <!-- Category Grid -->
+          <div class="row g-4 category-grid">
+            <div class="col-lg-4 col-md-6 col-12">
+              <article class="category-card">
+                <div class="category-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=700&q=80"
+                    alt="Family walking along a lakeside mountain trail"
+                    loading="lazy"
+                  />
+                  <span class="category-tag">Family Friendly</span>
+                </div>
+                <div class="category-body">
+                  <div class="category-location">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Lake Como, Italy
+                  </div>
+                  <h3 class="category-title">Lakeside Family Escape</h3>
+                  <div class="category-footer">
+                    <span class="category-price"
+                      >$680 <small>/ person</small></span
+                    >
+                    <a href="#" class="explore-link">
+                      Explore
+                      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+              <article class="category-card">
+                <div class="category-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=700&q=80"
+                    alt="Couple watching sunset on a beach"
+                    loading="lazy"
+                  />
+                  <span class="category-tag">Honeymoon</span>
+                </div>
+                <div class="category-body">
+                  <div class="category-location">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Bora Bora, French Polynesia
+                  </div>
+                  <h3 class="category-title">Bora Bora Honeymoon Bliss</h3>
+                  <div class="category-footer">
+                    <span class="category-price"
+                      >$1,920 <small>/ person</small></span
+                    >
+                    <a href="#" class="explore-link">
+                      Explore
+                      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+              <article class="category-card">
+                <div class="category-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=700&q=80"
+                    alt="Hikers camping near a mountain forest at dusk"
+                    loading="lazy"
+                  />
+                  <span class="category-tag">Adventure</span>
+                </div>
+                <div class="category-body">
+                  <div class="category-location">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Patagonia, Chile
+                  </div>
+                  <h3 class="category-title">Patagonia Camping Trek</h3>
+                  <div class="category-footer">
+                    <span class="category-price"
+                      >$1,150 <small>/ person</small></span
+                    >
+                    <a href="#" class="explore-link">
+                      Explore
+                      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+              <article class="category-card">
+                <div class="category-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=700&q=80"
+                    alt="Luxury infinity pool overlooking the ocean"
+                    loading="lazy"
+                  />
+                  <span class="category-tag">Luxury</span>
+                </div>
+                <div class="category-body">
+                  <div class="category-location">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Dubai, UAE
+                  </div>
+                  <h3 class="category-title">Dubai Luxury Skyline Stay</h3>
+                  <div class="category-footer">
+                    <span class="category-price"
+                      >$2,340 <small>/ person</small></span
+                    >
+                    <a href="#" class="explore-link">
+                      Explore
+                      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+              <article class="category-card">
+                <div class="category-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=700&q=80"
+                    alt="Terraced rice fields in Bali"
+                    loading="lazy"
+                  />
+                  <span class="category-tag">Family Friendly</span>
+                </div>
+                <div class="category-body">
+                  <div class="category-location">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Ubud, Bali
+                  </div>
+                  <h3 class="category-title">Bali Family Discovery Tour</h3>
+                  <div class="category-footer">
+                    <span class="category-price"
+                      >$740 <small>/ person</small></span
+                    >
+                    <a href="#" class="explore-link">
+                      Explore
+                      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+              <article class="category-card">
+                <div class="category-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=700&q=80"
+                    alt="Traditional temple gate in Kyoto"
+                    loading="lazy"
+                  />
+                  <span class="category-tag">Adventure</span>
+                </div>
+                <div class="category-body">
+                  <div class="category-location">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Kyoto, Japan
+                  </div>
+                  <h3 class="category-title">Kyoto Trails &amp; Temples</h3>
+                  <div class="category-footer">
+                    <span class="category-price"
+                      >$980 <small>/ person</small></span
+                    >
+                    <a href="#" class="explore-link">
+                      Explore
+                      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Load More CTA -->
+          <div class="text-center load-more-wrap">
+            <button class="btn btn-load-more" type="button">
+              Load More Packages
+              <i class="fa-solid fa-arrow-down ms-2" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
     <!-- ================= Main Content End ================= -->
 

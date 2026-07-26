@@ -23,7 +23,10 @@
   <body>
     <!-- ================= 1. Header / Navbar ================= -->
     <header>
-      <nav class="navbar navbar-expand-lg fixed-top custom-navbar" aria-label="Main navigation">
+      <nav
+        class="navbar navbar-expand-lg fixed-top custom-navbar"
+        aria-label="Main navigation"
+      >
         <div class="container">
           <!-- Logo -->
           <a class="navbar-brand" href="index.html#home">
@@ -56,17 +59,37 @@
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Home <i class="fa-solid fa-chevron-down ms-1 custom-arrow" aria-hidden="true"></i>
+                  Home
+                  <i
+                    class="fa-solid fa-chevron-down ms-1 custom-arrow"
+                    aria-hidden="true"
+                  ></i>
                 </a>
                 <ul
                   class="dropdown-menu custom-dropdown-menu"
                   aria-labelledby="homeDropdown"
                 >
-                  <li><a class="dropdown-item" href="index.html#about">About</a></li>
-                  <li><a class="dropdown-item" href="index.html#services">Services</a></li>
-                  <li><a class="dropdown-item" href="index.html#gallery">Gallery</a></li>
-                  <li><a class="dropdown-item" href="index.html#blog">Blog</a></li>
-                  <li><a class="dropdown-item" href="index.html#contact">Contact</a></li>
+                  <li>
+                    <a class="dropdown-item" href="index.html#about">About</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="index.html#services"
+                      >Services</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="index.html#gallery"
+                      >Gallery</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="index.html#blog">Blog</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="index.html#contact"
+                      >Contact</a
+                    >
+                  </li>
                 </ul>
               </li>
 
@@ -78,7 +101,12 @@
                 <a class="nav-link" href="hotels.html">Hotels</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="places.html" aria-current="page">Places To Visit</a>
+                <a
+                  class="nav-link active"
+                  href="places.html"
+                  aria-current="page"
+                  >Places To Visit</a
+                >
               </li>
             </ul>
           </div>
@@ -88,10 +116,470 @@
 
     <!-- ================= Main Content Start ================= -->
     <main class="main-content">
-      <div class="container">
-        <h1 class="mt-5">Places To Visit</h1>
-        <!-- Page content goes here -->
-      </div>
+      <!-- ================= 1. Hero / Search & Trending Destinations ================= -->
+      <section class="places-hero">
+        <div class="container">
+          <div class="text-center hero-heading-wrap">
+            <span class="section-eyebrow">Discover The World</span>
+            <h1 class="section-title">Explore Most Popular Places to Visit</h1>
+            <p class="section-subtitle">
+              Uncover iconic landmarks, ancient historical sites, and
+              breathtaking natural wonders around the globe.
+            </p>
+          </div>
+
+          <!-- Search / Filter Bar -->
+          <form class="search-card" novalidate>
+            <div class="row g-3 g-lg-2 align-items-end">
+              <div class="col-lg-3 col-md-6">
+                <label class="search-label" for="placeDestination">
+                  <i class="fa-solid fa-compass" aria-hidden="true"></i>
+                  Destination / Country
+                </label>
+                <input
+                  type="text"
+                  class="form-control search-input"
+                  id="placeDestination"
+                  placeholder="Where do you want to explore?"
+                />
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <label class="search-label" for="experienceCategory">
+                  <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                  Experience Category
+                </label>
+                <select
+                  class="form-select search-input"
+                  id="experienceCategory"
+                >
+                  <option selected>Any Experience</option>
+                  <option>Historical Sites</option>
+                  <option>Beaches &amp; Nature</option>
+                  <option>Mountain Adventure</option>
+                  <option>City Life</option>
+                </select>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <label class="search-label" for="recommendedSeason">
+                  <i class="fa-solid fa-calendar-day" aria-hidden="true"></i>
+                  Recommended Stay
+                </label>
+                <select class="form-select search-input" id="recommendedSeason">
+                  <option selected>Any Season</option>
+                  <option>Spring (Mar &ndash; May)</option>
+                  <option>Summer (Jun &ndash; Aug)</option>
+                  <option>Autumn (Sep &ndash; Nov)</option>
+                  <option>Winter (Dec &ndash; Feb)</option>
+                </select>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <button class="btn btn-yellow search-btn w-100" type="submit">
+                  <i
+                    class="fa-solid fa-magnifying-glass me-2"
+                    aria-hidden="true"
+                  ></i
+                  >Search Places
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <!-- Trending Destinations Grid -->
+          <div class="row g-4 featured-grid">
+            <!-- Destination Card 1 -->
+            <div class="col-lg-4 col-md-6">
+              <article class="destination-card">
+                <div class="destination-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=800&q=80"
+                    alt="Pyramids of Giza under a warm desert sky"
+                    loading="lazy"
+                  />
+                  <span class="destination-badge badge-trending"
+                    >Trending Destination</span
+                  >
+                  <span class="attraction-stamp">
+                    <span class="stamp-num">15+</span>
+                    <span class="stamp-label">Attractions</span>
+                  </span>
+                </div>
+                <div class="destination-body">
+                  <h3 class="destination-title">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Cairo, Egypt
+                  </h3>
+                  <div class="destination-meta">
+                    <span class="destination-rating">
+                      <i class="fa-solid fa-star" aria-hidden="true"></i>
+                      <span class="rating-num">4.9</span>
+                      <span class="review-count">/ 240 Reviews</span>
+                    </span>
+                  </div>
+                  <span class="duration-chip">
+                    <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                    3&ndash;4 Days Recommended
+                  </span>
+                  <div class="destination-footer">
+                    <div class="destination-price">
+                      <span class="price-label">From</span>
+                      <span class="price-new">$250</span>
+                      <span class="price-unit">/ person</span>
+                    </div>
+                    <a href="#" class="btn btn-book">Explore Places</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Destination Card 2 -->
+            <div class="col-lg-4 col-md-6">
+              <article class="destination-card">
+                <div class="destination-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=800&q=80"
+                    alt="Terraced rice fields and jungle in Bali"
+                    loading="lazy"
+                  />
+                  <span class="destination-badge badge-top-pick">Top Pick</span>
+                  <span class="attraction-stamp">
+                    <span class="stamp-num">20+</span>
+                    <span class="stamp-label">Landmarks</span>
+                  </span>
+                </div>
+                <div class="destination-body">
+                  <h3 class="destination-title">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Ubud, Bali
+                  </h3>
+                  <div class="destination-meta">
+                    <span class="destination-rating">
+                      <i class="fa-solid fa-star" aria-hidden="true"></i>
+                      <span class="rating-num">4.8</span>
+                      <span class="review-count">/ 386 Reviews</span>
+                    </span>
+                  </div>
+                  <span class="duration-chip">
+                    <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                    4&ndash;5 Days Recommended
+                  </span>
+                  <div class="destination-footer">
+                    <div class="destination-price">
+                      <span class="price-label">From</span>
+                      <span class="price-new">$310</span>
+                      <span class="price-unit">/ person</span>
+                    </div>
+                    <a href="#" class="btn btn-book">Explore Places</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Destination Card 3 -->
+            <div class="col-lg-4 col-md-6">
+              <article class="destination-card">
+                <div class="destination-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80"
+                    alt="Santorini clifftop town overlooking the caldera"
+                    loading="lazy"
+                  />
+                  <span class="destination-badge badge-trending"
+                    >Trending Destination</span
+                  >
+                  <span class="attraction-stamp">
+                    <span class="stamp-num">12+</span>
+                    <span class="stamp-label">Attractions</span>
+                  </span>
+                </div>
+                <div class="destination-body">
+                  <h3 class="destination-title">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Santorini, Greece
+                  </h3>
+                  <div class="destination-meta">
+                    <span class="destination-rating">
+                      <i class="fa-solid fa-star" aria-hidden="true"></i>
+                      <span class="rating-num">4.9</span>
+                      <span class="review-count">/ 512 Reviews</span>
+                    </span>
+                  </div>
+                  <span class="duration-chip">
+                    <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                    3&ndash;4 Days Recommended
+                  </span>
+                  <div class="destination-footer">
+                    <div class="destination-price">
+                      <span class="price-label">From</span>
+                      <span class="price-new">$275</span>
+                      <span class="price-unit">/ person</span>
+                    </div>
+                    <a href="#" class="btn btn-book">Explore Places</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 2. Explore Places by Experience ================= -->
+      <section class="category-section">
+        <div class="container">
+          <div class="text-center category-heading-wrap">
+            <span class="section-eyebrow">Browse By Experience</span>
+            <h2 class="section-title">Explore Places by Category</h2>
+          </div>
+
+          <!-- Filter Pills -->
+          <div
+            class="filter-pills"
+            role="tablist"
+            aria-label="Filter places by experience"
+          >
+            <button
+              class="pill active"
+              type="button"
+              role="tab"
+              aria-selected="true"
+            >
+              All Places
+            </button>
+            <button class="pill" type="button" role="tab" aria-selected="false">
+              Historical &amp; Cultural
+            </button>
+            <button class="pill" type="button" role="tab" aria-selected="false">
+              Nature &amp; Wildlife
+            </button>
+            <button class="pill" type="button" role="tab" aria-selected="false">
+              Beaches &amp; Coastal
+            </button>
+            <button class="pill" type="button" role="tab" aria-selected="false">
+              Adventure &amp; Hiking
+            </button>
+          </div>
+
+          <!-- Landmark Grid -->
+          <div class="row g-4 category-grid">
+            <div class="col-lg-4 col-md-6 col-12">
+              <article class="category-card landmark-card">
+                <div class="category-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1539768942893-daf53e448371?auto=format&fit=crop&w=700&q=80"
+                    alt="Great Pyramids and the Sphinx of Giza"
+                    loading="lazy"
+                  />
+                  <span class="category-tag">Heritage Site</span>
+                </div>
+                <div class="category-body">
+                  <h3 class="category-title">Pyramids of Giza</h3>
+                  <div class="category-location">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Giza, Egypt
+                  </div>
+                  <ul class="info-strip">
+                    <li>
+                      <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                      Oct &ndash; April
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-ticket" aria-hidden="true"></i>
+                      Ticket Required
+                    </li>
+                  </ul>
+                  <a href="#" class="explore-link">
+                    View Landmark
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+              <article class="category-card landmark-card">
+                <div class="category-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=700&q=80"
+                    alt="Eiffel Tower against a clear Paris sky"
+                    loading="lazy"
+                  />
+                  <span class="category-tag">City Landmark</span>
+                </div>
+                <div class="category-body">
+                  <h3 class="category-title">Eiffel Tower</h3>
+                  <div class="category-location">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Paris, France
+                  </div>
+                  <ul class="info-strip">
+                    <li>
+                      <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                      Apr &ndash; Jun
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-ticket" aria-hidden="true"></i>
+                      Ticket Required
+                    </li>
+                  </ul>
+                  <a href="#" class="explore-link">
+                    View Landmark
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+              <article class="category-card landmark-card">
+                <div class="category-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=700&q=80"
+                    alt="Black sand Diamond Beach with icebergs in Iceland"
+                    loading="lazy"
+                  />
+                  <span class="category-tag">Natural Wonder</span>
+                </div>
+                <div class="category-body">
+                  <h3 class="category-title">Diamond Beach</h3>
+                  <div class="category-location">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Vatnajokull, Iceland
+                  </div>
+                  <ul class="info-strip">
+                    <li>
+                      <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                      Jun &ndash; Sep
+                    </li>
+                    <li>
+                      <i
+                        class="fa-solid fa-circle-check"
+                        aria-hidden="true"
+                      ></i>
+                      Free Entry
+                    </li>
+                  </ul>
+                  <a href="#" class="explore-link">
+                    View Landmark
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+              <article class="category-card landmark-card">
+                <div class="category-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?auto=format&fit=crop&w=700&q=80"
+                    alt="Machu Picchu ruins surrounded by mountain peaks"
+                    loading="lazy"
+                  />
+                  <span class="category-tag">Heritage Site</span>
+                </div>
+                <div class="category-body">
+                  <h3 class="category-title">Machu Picchu</h3>
+                  <div class="category-location">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Cusco Region, Peru
+                  </div>
+                  <ul class="info-strip">
+                    <li>
+                      <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                      May &ndash; Sep
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-ticket" aria-hidden="true"></i>
+                      Ticket Required
+                    </li>
+                  </ul>
+                  <a href="#" class="explore-link">
+                    View Landmark
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+              <article class="category-card landmark-card">
+                <div class="category-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&w=700&q=80"
+                    alt="Serengeti savanna with wildlife at golden hour"
+                    loading="lazy"
+                  />
+                  <span class="category-tag">National Park</span>
+                </div>
+                <div class="category-body">
+                  <h3 class="category-title">Serengeti National Park</h3>
+                  <div class="category-location">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Tanzania
+                  </div>
+                  <ul class="info-strip">
+                    <li>
+                      <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                      Jun &ndash; Oct
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-ticket" aria-hidden="true"></i>
+                      Ticket Required
+                    </li>
+                  </ul>
+                  <a href="#" class="explore-link">
+                    View Landmark
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+              <article class="category-card landmark-card">
+                <div class="category-media">
+                  <img
+                    src="https://images.unsplash.com/photo-1490077476659-095159692ab5?auto=format&fit=crop&w=700&q=80"
+                    alt="Trail through the Swiss Alps mountain range"
+                    loading="lazy"
+                  />
+                  <span class="category-tag">Adventure Trail</span>
+                </div>
+                <div class="category-body">
+                  <h3 class="category-title">Swiss Alps Trail</h3>
+                  <div class="category-location">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Interlaken, Switzerland
+                  </div>
+                  <ul class="info-strip">
+                    <li>
+                      <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                      Jul &ndash; Sep
+                    </li>
+                    <li>
+                      <i
+                        class="fa-solid fa-circle-check"
+                        aria-hidden="true"
+                      ></i>
+                      Free Entry
+                    </li>
+                  </ul>
+                  <a href="#" class="explore-link">
+                    View Landmark
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Load More CTA -->
+          <div class="text-center load-more-wrap">
+            <button class="btn btn-load-more" type="button">
+              Load More Places
+              <i class="fa-solid fa-chevron-down ms-2" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
     <!-- ================= Main Content End ================= -->
 
@@ -170,7 +658,9 @@
               diam.
             </p>
             <form class="newsletter-box" action="#" novalidate>
-              <label for="newsletterEmail" class="visually-hidden">Email address</label>
+              <label for="newsletterEmail" class="visually-hidden"
+                >Email address</label
+              >
               <input
                 id="newsletterEmail"
                 type="email"
@@ -178,7 +668,11 @@
                 placeholder="Enter email"
                 required
               />
-              <button class="btn newsletter-btn" type="submit" aria-label="Subscribe">
+              <button
+                class="btn newsletter-btn"
+                type="submit"
+                aria-label="Subscribe"
+              >
                 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
               </button>
             </form>
@@ -189,13 +683,21 @@
         <div class="text-center footer-credits pt-3">
           <p class="mb-0">
             Designed and Developed by
-            <a href="https://uideck.com" target="_blank" rel="noopener noreferrer" class="credit-link"
+            <a
+              href="https://uideck.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="credit-link"
               >UIdeck</a
             >
           </p>
           <p class="mb-0">
             Distributed by
-            <a href="https://themewagon.com" target="_blank" rel="noopener noreferrer" class="credit-link"
+            <a
+              href="https://themewagon.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="credit-link"
               >ThemeWagon</a
             >
           </p>
