@@ -20,7 +20,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+
+  <body class="home-page">
     <!-- ================= 1. Header / Navbar ================= -->
     <header>
       <nav
@@ -98,7 +99,483 @@
 
     <!-- ================= Main Content Start ================= -->
     <main class="main-content">
-      <!-- Page content goes here -->
+      <!-- ================= Home Section Start ================= -->
+
+      <section id="home" class="home-hero">
+        <div class="home-hero-overlay">
+          <div class="home-hero-content">
+            <h1>
+              Explore The World with
+              <span style="color: #eec41e">TraveLand</span>
+            </h1>
+            <p>
+              Lorem ipsum dolor amet, consetetur sadipscing elitr sed diam
+              nonumy eirmod tempor invidun dolore.
+            </p>
+            <a id="navbar-button" href="hotels.html" class="btn btn-warning">
+              Book now</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= Home Section End ================= -->
+
+      <!-- ================= About Section Start ================= -->
+
+      <section class="about-section" id="about">
+        <div class="container">
+          <div class="about-image-box">
+            <img src="./Images/about/about_image.jpg" alt="About TraveLand" />
+          </div>
+          <div class="about-content">
+            <h2>About Us</h2>
+            <h1>TraveLand in <span>Numbers</span></h1>
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet.
+            </p>
+            <a href="#" class="btn-read-more">Read More</a>
+
+            <div class="stats-grid">
+              <div class="stat-card">
+                <h3 class="counter" data-target="534">0</h3>
+                <p>Trips Done</p>
+              </div>
+              <div class="stat-card">
+                <h3 class="counter" data-target="424">0</h3>
+                <p>Corporate Clients</p>
+              </div>
+              <div class="stat-card">
+                <h3 class="counter" data-target="35">0</h3>
+                <p>Visited Countries</p>
+              </div>
+              <div class="stat-card">
+                <h3 class="counter" data-target="15">0</h3>
+                <p>Team Members</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ================= About Section End ================= -->
+
+      <!-- ================= 3. Services ================= -->
+      <section id="services" class="services-section">
+        <div class="container">
+          <!-- Section Heading -->
+          <div class="text-center services-heading">
+            <span class="section-eyebrow">Our Services</span>
+
+            <h1 class="section-title">Service We Provide</h1>
+
+            <p class="section-subtitle">
+              We provide everything you need for a comfortable and unforgettable
+              travel experience, from booking your hotel and flight to arranging
+              your transportation.
+            </p>
+          </div>
+
+          <!-- Services Cards -->
+          <div class="row g-4 justify-content-center">
+            <!-- Hotel Booking -->
+            <div class="col-lg-3 col-md-6">
+              <div class="service-card">
+                <div class="service-icon">
+                  <i class="fa-solid fa-hotel"></i>
+                </div>
+
+                <h3>Hotel Booking</h3>
+
+                <p>
+                  Find and book the best hotels at your destination with
+                  comfortable rooms and excellent services.
+                </p>
+
+                <a href="hotels.html" class="service-link">
+                  Explore Hotels
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Flight Booking -->
+            <div class="col-lg-3 col-md-6">
+              <div class="service-card">
+                <div class="service-icon">
+                  <i class="fa-solid fa-plane"></i>
+                </div>
+
+                <h3>Flight Booking</h3>
+
+                <p>
+                  Book your flights easily and discover convenient travel
+                  options for your next adventure.
+                </p>
+
+                <a href="packages.html" class="service-link">
+                  Explore Trips
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Ship Booking -->
+            <div class="col-lg-3 col-md-6">
+              <div class="service-card">
+                <div class="service-icon">
+                  <i class="fa-solid fa-ship"></i>
+                </div>
+
+                <h3>Ship Booking</h3>
+
+                <p>
+                  Enjoy unforgettable sea journeys and discover amazing
+                  destinations with our travel options.
+                </p>
+
+                <a href="packages.html" class="service-link">
+                  Explore Trips
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Car Booking -->
+            <div class="col-lg-3 col-md-6">
+              <div class="service-card">
+                <div class="service-icon">
+                  <i class="fa-solid fa-car"></i>
+                </div>
+
+                <h3>Car Booking</h3>
+
+                <p>
+                  Get reliable transportation and enjoy a smooth and comfortable
+                  journey wherever you go.
+                </p>
+
+                <a href="places.html" class="service-link">
+                  Explore Places
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ================= Services Section End ================= -->
+
+      <!-- ================= Gallery Section ================= -->
+      <section id="gallery" class="gallery-section">
+        <div class="container">
+          <!-- Section Heading -->
+          <div class="text-center gallery-heading-wrap">
+            <span class="section-eyebrow">Our Gallery</span>
+            <h2 class="section-title">Explore Our Destination Gallery</h2>
+            <p class="section-subtitle mx-auto">
+              A glimpse into the breathtaking places our travelers have explored
+              — from mountain peaks to hidden coastlines around the world.
+            </p>
+          </div>
+
+          <!-- Gallery Carousel -->
+          <div
+            id="galleryCarousel"
+            class="carousel slide gallery-carousel"
+            data-bs-ride="carousel"
+          >
+            <!-- Indicators -->
+            <div class="carousel-indicators gallery-indicators">
+              <button
+                type="button"
+                data-bs-target="#galleryCarousel"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#galleryCarousel"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#galleryCarousel"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#galleryCarousel"
+                data-bs-slide-to="3"
+                aria-label="Slide 4"
+              ></button>
+            </div>
+
+            <!-- Slides -->
+            <div class="carousel-inner gallery-inner">
+              <!-- Slide 1 -->
+              <div class="carousel-item active">
+                <img
+                  src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80"
+                  class="d-block w-100"
+                  alt="Santorini, Greece"
+                />
+                <div class="carousel-caption gallery-caption">
+                  <span class="gallery-caption-eyebrow">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Greece
+                  </span>
+                  <h3 class="gallery-caption-title">Santorini Sunset Views</h3>
+                  <p class="gallery-caption-text">
+                    Whitewashed cliffs and endless Aegean horizons.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="carousel-item">
+                <img
+                  src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=1600&q=80"
+                  class="d-block w-100"
+                  alt="Bali, Indonesia"
+                />
+                <div class="carousel-caption gallery-caption">
+                  <span class="gallery-caption-eyebrow">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Indonesia
+                  </span>
+                  <h3 class="gallery-caption-title">Bali Rice Terraces</h3>
+                  <p class="gallery-caption-text">
+                    Lush green terraces carved into tropical hillsides.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="carousel-item">
+                <img
+                  src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=1600&q=80"
+                  class="d-block w-100"
+                  alt="Swiss Alps"
+                />
+                <div class="carousel-caption gallery-caption">
+                  <span class="gallery-caption-eyebrow">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Switzerland
+                  </span>
+                  <h3 class="gallery-caption-title">Alpine Mountain Escape</h3>
+                  <p class="gallery-caption-text">
+                    Snow-capped peaks and crisp mountain air await.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="carousel-item">
+                <img
+                  src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=1600&q=80"
+                  class="d-block w-100"
+                  alt="Maldives"
+                />
+                <div class="carousel-caption gallery-caption">
+                  <span class="gallery-caption-eyebrow">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Maldives
+                  </span>
+                  <h3 class="gallery-caption-title">Overwater Villas</h3>
+                  <p class="gallery-caption-text">
+                    Crystal-clear lagoons and private tropical retreats.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Controls -->
+            <button
+              class="carousel-control-prev gallery-control"
+              type="button"
+              data-bs-target="#galleryCarousel"
+              data-bs-slide="prev"
+            >
+              <span class="gallery-control-icon">
+                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+              </span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next gallery-control"
+              type="button"
+              data-bs-target="#galleryCarousel"
+              data-bs-slide="next"
+            >
+              <span class="gallery-control-icon">
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+              </span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- ================= Gallery Section End ================= -->
+
+      <!-- ================= Blog Section ================= -->
+      <section id="blog" class="blog-section py-5">
+        <div class="container">
+          <div class="text-center mb-5">
+            <span class="section-eyebrow">Our Blog</span>
+            <h2 class="section-title">Recent Blog Post</h2>
+            <p class="section-subtitle">
+              Read our latest travel stories and useful tips.
+            </p>
+          </div>
+
+          <div class="row g-4">
+            <!-- Left Blog -->
+            <div class="col-lg-6">
+              <div class="main-blog">
+                <img
+                  src="./Images/blog/blog-1.jpg"
+                  class="img-fluid rounded"
+                  alt=""
+                />
+
+                <div class="blog-info mt-3">
+                  <small>Posted by: Michele Smith | 14 June 2023</small>
+
+                  <h3 class="mt-3">
+                    Tourney eirmod tempor invidunt ut labore et dolore magna
+                  </h3>
+
+                  <p>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                    diam nonumy eirmod tempor.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Blogs -->
+            <div class="col-lg-6">
+              <div class="small-blog d-flex mb-4">
+                <img src="./Images/blog/blog-2.jpg" class="rounded" alt="" />
+
+                <div class="ms-3">
+                  <h5>Tourney eirmod tempor invidunt</h5>
+
+                  <p>Lorem ipsum dolor sit amet consectetur.</p>
+
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+
+              <div class="small-blog d-flex">
+                <img src="./Images/blog/blog-3.jpg" class="rounded" alt="" />
+
+                <div class="ms-3">
+                  <h5>Tourney eirmod tempor invidunt</h5>
+
+                  <p>Lorem ipsum dolor sit amet consectetur.</p>
+
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ================= Blog Section End ================= -->
+
+      <!-- ================= CONTACT US ================= -->
+      <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed dianum
+          eirmod tempor invidunt ut labore et dolore magna
+        </p>
+        <form action="#" method="post" class="inputs-group" id="inputs-group">
+          <div class="form-group">
+            <div class="input-box">
+              <i class="fa-solid fa-circle-user"></i>
+              <input
+                type="text"
+                class="name-input"
+                id="name-input"
+                placeholder="Name"
+                name="name"
+                autocomplete="name"
+              />
+            </div>
+            <small class="hidden"
+              >Please enter a username between 3-20 characters</small
+            >
+          </div>
+          <div class="form-group">
+            <div class="input-box">
+              <i class="fa-solid fa-phone"></i>
+              <input
+                type="tel"
+                class="phone-input"
+                id="phone-input"
+                placeholder="Phone"
+                name="phone"
+                autocomplete="tel"
+              />
+            </div>
+            <small class="hidden">Please enter a valid phone number</small>
+          </div>
+          <div class="form-group">
+            <div class="input-box">
+              <i class="fas fa-envelope"></i>
+              <input
+                type="email"
+                class="email-input"
+                id="email-input"
+                placeholder="Email"
+                name="email"
+                autocomplete="email"
+                required
+              />
+            </div>
+            <small class="hidden">Please enter a valid email address</small>
+          </div>
+          <div class="form-group">
+            <div class="select-box">
+              <i class="fa-solid fa-plane left-icon"></i>
+              <select id="trip-list" name="trip-list">
+                <option value="">Select trip</option>
+                <option value="trip-1">trip 1</option>
+                <option value="trip-2">trip 2</option>
+                <option value="trip-3">trip 3</option>
+              </select>
+              <i class="fa-solid fa-arrow-down arrow-icon"></i>
+            </div>
+          </div>
+          <div class="message-input">
+            <textarea
+              id="message-textarea"
+              placeholder="Message"
+              name="message"
+            ></textarea>
+          </div>
+          <button id="submit-btn" type="submit">Send Message</button>
+        </form>
+        <div class="success-state hidden" id="success">
+          <div class="success-icon">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <h2>Message sent!</h2>
+          <p>Thanks for reaching out. We'll get back to you within 24 hours.</p>
+          <button class="reset-btn" id="reset-btn">Send another message</button>
+        </div>
+      </section>
+      <!-- ================= CONTACT SECTION END ================= -->
     </main>
     <!-- ================= Main Content End ================= -->
 
@@ -223,13 +700,18 @@
         </div>
       </div>
 
-      <!-- Scroll To Top Button -->
-      <a href="#home" class="scroll-to-top" aria-label="Scroll to top">
-        <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
-      </a>
+      <!-- Scroll To Top Button moved out of the footer — see floating button before </body> -->
     </footer>
+
+    <!-- Floating Scroll To Top Button -->
+    <a href="#" class="scroll-to-top" aria-label="Scroll to top">
+      <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+    </a>
 
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS (navbar, counters, contact form validation) -->
+    <script src="script.js"></script>
   </body>
 </html>
