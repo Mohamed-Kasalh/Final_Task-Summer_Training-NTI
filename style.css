@@ -1950,6 +1950,24 @@ body {
   padding: 15px;
   justify-self: start;
 }
+
+/* Contact form — mobile */
+@media (max-width: 767.98px) {
+  .inputs-group {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+
+  .message-input {
+    grid-column: 1 / 2;
+  }
+
+  .inputs-group button {
+    width: 100%;
+    justify-self: stretch;
+  }
+}
+
 .hidden {
   display: none;
 }
